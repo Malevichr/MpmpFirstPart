@@ -3,15 +3,11 @@ package firstLesson
 import Reader
 import kotlin.math.pow
 
-interface Converter{
-    fun convert(base: Int):Converter
-    fun getNumber():Int
-    fun getBase(): Int
-}
 
-class IntConverter(private val number: Int, private val base: Int = 10) : Converter{
-    override fun getNumber() = number
-    override fun getBase() = base
+
+class IntConverter(private val number: Int, private val base: Int = 10) {
+    fun getValue() = number
+    fun getBase() = base
     init {
         if ((base < 2) or (base > 10))
             throw IllegalArgumentException("Base must be in [2..10]")
@@ -27,12 +23,12 @@ class IntConverter(private val number: Int, private val base: Int = 10) : Conver
         return IntConverter(result, base)
     }
     private fun fromDecimal(n: Int, base: Int):String{
-        if (n != 0)
-            return fromDecimal(n / base, base) + n % base
+        return if (n != 0)
+            fromDecimal(n / base, base) + n % base
         else
-            return ""
+            ""
     }
-    override fun convert(base: Int): IntConverter {
+    fun convert(base: Int): IntConverter {
         val decimalNumber = getDecimal(number, this.base)
         return IntConverter(fromDecimal(decimalNumber.number, base).toInt(), base)
     }
@@ -51,7 +47,7 @@ class FirstLesson (private val taskNumber: Int) {
         val number = Reader.intInput()
         val base = Reader.intInput()
         val converter = IntConverter(number, base)
-        println(converter.convert(10).getNumber())
+        println("Value = " + converter.convert(10).getValue() + " Base = " + converter.convert(10).getBase())
     }
 
 }
