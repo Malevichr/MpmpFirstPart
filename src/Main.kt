@@ -12,7 +12,7 @@ object Reader{
             return number
         }
         catch (e:Exception){
-            println("Not number, enter again")
+            println("Not Integer number, enter again")
             return intInput()
         }
     }

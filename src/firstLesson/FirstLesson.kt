@@ -9,8 +9,7 @@ class IntConverter(private val number: Int, private val base: Int = 10) {
     fun getValue() = number
     fun getBase() = base
     init {
-        if ((base < 2) or (base > 10))
-            throw IllegalArgumentException("Base must be in [2..10]")
+        baseValidator()
     }
     private fun getDecimal(number: Int, base: Int):IntConverter{
         val numberList: List<Int> = number.toString().reversed().map(Character::getNumericValue)
@@ -29,10 +28,15 @@ class IntConverter(private val number: Int, private val base: Int = 10) {
             ""
     }
     fun convert(base: Int): IntConverter {
+        baseValidator()
         val decimalNumber = getDecimal(number, this.base)
         return IntConverter(fromDecimal(decimalNumber.number, base).toInt(), base)
     }
-
+    private fun baseValidator(): Boolean{
+        if ((base < 2) or (base > 10))
+            throw IllegalArgumentException("Base must be in [2..10]")
+        return true
+    }
 }
 
 
