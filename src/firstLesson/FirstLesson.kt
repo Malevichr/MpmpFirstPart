@@ -56,11 +56,14 @@ class FirstLesson (private val taskNumber: Int) {
         }
     }
     private fun task1(){
-        val number = Reader.intInput()
+        println("Enter number")
+        val number:Int = Reader.intInput()
+        println("Enter base")
         val base = Reader.intInput()
-        val converter = Converter.IntConverter(number, base).convert(2)
+        println("Enter new base")
+        val newBase = Reader.intInput()
+        val converter = Converter.IntConverter(number, base).convert(newBase)
 
         println("Value = " + converter.getValue() + " Base = " + converter.getBase())
     }
-
 }

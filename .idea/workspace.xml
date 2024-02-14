@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="FirstTask polished">
+    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="FirstTask created interface Converter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/firstLesson/FirstLesson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/firstLesson/FirstLesson.kt" afterDir="false" />
@@ -121,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707933143466</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="FirstTask created interface Converter">
+      <option name="closed" value="true" />
+      <created>1707935506543</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707935506543</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +148,7 @@
     <MESSAGE value="FirstTask solved" />
     <MESSAGE value="FirstTask delete Interface" />
     <MESSAGE value="FirstTask polished" />
-    <option name="LAST_COMMIT_MESSAGE" value="FirstTask polished" />
+    <MESSAGE value="FirstTask created interface Converter" />
+    <option name="LAST_COMMIT_MESSAGE" value="FirstTask created interface Converter" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 import firstLesson.FirstLesson
 
 fun main(){
+    println("Enter task")
     val number =  Reader.intInput()
     val runner = FirstLesson(number)
     runner.start()
