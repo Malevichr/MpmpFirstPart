@@ -1,11 +1,9 @@
-package firstLesson
+package lessons.firstLesson
 
-import Reader
 import kotlin.math.pow
 
-
 interface Converter {
-    fun convert(base: Number):Converter
+    fun convert(newBase: Int):Converter
     fun getValue():String
     fun getBase():String
     class IntConverter(private val number: Int, private val base: Int = 10) : Converter{
@@ -13,7 +11,7 @@ interface Converter {
         override fun getBase() = base.toString()
 
         init {
-            baseValidator()
+            baseValidator(base)
         }
 
         private fun getDecimal(number: Int, base: Int): IntConverter {
@@ -34,36 +32,16 @@ interface Converter {
                 ""
         }
 
-        override fun convert(base: Number): Converter {
-            baseValidator()
+        override fun convert(newBase: Int): Converter {
+            baseValidator(newBase)
             val decimalNumber = getDecimal(number, this.base)
-            return IntConverter(fromDecimal(decimalNumber.number, base.toInt()).toInt(), base.toInt())
+            return IntConverter(fromDecimal(decimalNumber.number, newBase).toInt(), newBase)
         }
 
-        private fun baseValidator(): Boolean {
+        private fun baseValidator(base: Int): Boolean {
             if ((base < 2) or (base > 10))
                 throw IllegalArgumentException("Base must be in [2..10]")
             return true
         }
-    }
-}
-
-
-class FirstLesson (private val taskNumber: Int) {
-    fun start(){
-        when (taskNumber){
-            1-> task1()
-        }
-    }
-    private fun task1(){
-        println("Enter number")
-        val number:Int = Reader.intInput()
-        println("Enter base")
-        val base = Reader.intInput()
-        println("Enter new base")
-        val newBase = Reader.intInput()
-        val converter = Converter.IntConverter(number, base).convert(newBase)
-
-        println("Value = " + converter.getValue() + " Base = " + converter.getBase())
     }
 }

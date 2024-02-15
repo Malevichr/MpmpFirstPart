@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="FirstTask created interface Converter">
+    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="FirstTask polished">
+      <change afterPath="$PROJECT_DIR$/src/MyTools/Reader.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lessons/firstLesson/Converter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firstLesson/FirstLesson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/firstLesson/FirstLesson.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firstLesson/FirstLesson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/firstLesson/FirstLesson.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -43,7 +47,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2cJ6FuL6vXxNMlUcakLMOLqBY9b" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -129,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707935506543</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="FirstTask polished">
+      <option name="closed" value="true" />
+      <created>1707942038289</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707942038289</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,8 +161,8 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="FirstTask solved" />
     <MESSAGE value="FirstTask delete Interface" />
-    <MESSAGE value="FirstTask polished" />
     <MESSAGE value="FirstTask created interface Converter" />
-    <option name="LAST_COMMIT_MESSAGE" value="FirstTask created interface Converter" />
+    <MESSAGE value="FirstTask polished" />
+    <option name="LAST_COMMIT_MESSAGE" value="FirstTask polished" />
   </component>
 </project>
