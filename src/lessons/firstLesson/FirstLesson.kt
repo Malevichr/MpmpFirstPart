@@ -2,13 +2,20 @@ package lessons.firstLesson
 
 import MyTools.MyReader
 
-
+/**
+ * Lesson 13.02.2022
+ */
 class FirstLesson (private val taskNumber: Int) {
+
     fun start(){
         when (taskNumber){
             1-> task1()
         }
     }
+
+    /**
+     * Converting numbers from one system to another
+     */
     private fun task1(){
         println("Enter number")
         val number:Int = MyReader.intInput()

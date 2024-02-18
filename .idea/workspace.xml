@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="FirstTask polished">
-      <change afterPath="$PROJECT_DIR$/src/MyTools/Reader.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lessons/firstLesson/Converter.kt" afterDir="false" />
+    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="FirstTask bug fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firstLesson/FirstLesson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/firstLesson/FirstLesson.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/firstLesson/FirstLesson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/firstLesson/FirstLesson.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707942038289</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="FirstTask bug fixed">
+      <option name="closed" value="true" />
+      <created>1708001949427</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708001949427</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +168,7 @@
     <MESSAGE value="FirstTask delete Interface" />
     <MESSAGE value="FirstTask created interface Converter" />
     <MESSAGE value="FirstTask polished" />
-    <option name="LAST_COMMIT_MESSAGE" value="FirstTask polished" />
+    <MESSAGE value="FirstTask bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="FirstTask bug fixed" />
   </component>
 </project>
