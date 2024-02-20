@@ -1,17 +1,23 @@
-package lessons.firstLesson
+package lessons.Lesson01
 
 import kotlin.math.pow
 
 interface Converter {
-    fun convert(newBase: Int):Converter
-    fun getValue():String
-    fun getBase():String
-    class IntConverter(private val number: Int, private val base: Int = 10) : Converter{
+    fun convert(newBase: Int): Converter
+    fun getValue(): String
+    fun getBase(): String
+    class IntConverter(private val number: Int, private val base: Int = 10) : Converter {
         override fun getValue() = number.toString()
         override fun getBase() = base.toString()
 
         init {
             baseValidator(base)
+        }
+
+        private fun baseValidator(base: Int): Boolean {
+            if ((base < 2) or (base > 10))
+                throw IllegalArgumentException("Base must be in [2..10]")
+            return true
         }
 
         private fun getDecimal(number: Int, base: Int): IntConverter {
@@ -36,12 +42,6 @@ interface Converter {
             baseValidator(newBase)
             val decimalNumber = getDecimal(number, this.base)
             return IntConverter(fromDecimal(decimalNumber.number, newBase).toInt(), newBase)
-        }
-
-        private fun baseValidator(base: Int): Boolean {
-            if ((base < 2) or (base > 10))
-                throw IllegalArgumentException("Base must be in [2..10]")
-            return true
         }
     }
 }

@@ -1,8 +1,9 @@
 import MyTools.MyReader
-import lessons.firstLesson.FirstLesson
+import lessons.lesson02.Lesson2
 
-fun main(){
+fun main() {
+
     println("Enter task")
-    val number =  MyReader.intInput()
-    FirstLesson(number).start()
+    //val number = MyReader.intInput()
+    Lesson2(2).start()
 }

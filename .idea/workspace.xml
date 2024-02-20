@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="FirstTask bug fixed">
+    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="FirstTask some updates">
+      <change afterPath="$PROJECT_DIR$/src/lessons/lesson02/Lesson2.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanValidator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/firstLesson/FirstLesson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/firstLesson/FirstLesson.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/firstLesson/Converter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/Lesson01/Converter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/firstLesson/FirstLesson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/Lesson01/Lesson1.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +45,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -51,17 +59,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Kotlin.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Kotlin.Main.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "settings.qodana"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="lessons.Lesson2" />
+      <recent name="lessons.Lesson1" />
+    </key>
+  </component>
   <component name="RunManager" selected="Kotlin.MainKt">
     <configuration name="Main" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -81,6 +95,9 @@
       <list>
         <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.Main" />
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.Main" />
+        <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708001949427</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="FirstTask some updates">
+      <option name="closed" value="true" />
+      <created>1708275668587</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708275668587</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +194,7 @@
     <MESSAGE value="FirstTask created interface Converter" />
     <MESSAGE value="FirstTask polished" />
     <MESSAGE value="FirstTask bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="FirstTask bug fixed" />
+    <MESSAGE value="FirstTask some updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="FirstTask some updates" />
   </component>
 </project>
