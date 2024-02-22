@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Second lesson. RomanNum completed">
-      <change afterPath="$PROJECT_DIR$/src/tests/RomanTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MPMP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MPMP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTools/Reader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/myTools/Reader.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/Lesson01/Converter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson01/Converter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/Lesson01/Lesson1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson01/Lesson1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/Lesson2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/Lesson2.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -257,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708458703637</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Second lesson. RomanNum completed">
+      <option name="closed" value="true" />
+      <created>1708594021861</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708594021861</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

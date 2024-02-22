@@ -50,15 +50,13 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
         var result = 0
         var index = 0
         while (index < romanNum.length) {
-            val subNum: String =
-                if (index == romanNum.length - 1) romanNum[index].toString() else romanNum[index].toString() + romanNum[index + 1].toString()
+            val subNum: String = if (index == romanNum.length - 1) romanNum[index].toString() else romanNum[index].toString() + romanNum[index + 1].toString()
             if (romanSymbolsToValues.contains(subNum)) {
                 result += (romanSymbolsToValues[subNum] ?: 0)
                 index++
             } else {
                 result += (romanSymbolsToValues[romanNum[index].toString()] ?: 0)
             }
-
             index++
         }
         return result
@@ -117,7 +115,7 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
     }
 
     operator fun dec(): RomanNum {
-        val result = this.intValue + 1
+        val result = this.intValue - 1
         return resultValidate(result)
     }
 
