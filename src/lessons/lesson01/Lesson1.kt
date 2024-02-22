@@ -1,6 +1,6 @@
-package lessons.Lesson01
+package lessons.lesson01
 
-import MyTools.MyReader
+import myTools.MyReader
 
 /**
  * First Lesson 13.02.2022

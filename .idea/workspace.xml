@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="FirstTask some updates">
-      <change afterPath="$PROJECT_DIR$/src/lessons/lesson02/Lesson2.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanValidator.kt" afterDir="false" />
+    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Second lesson. RomanNum completed">
+      <change afterPath="$PROJECT_DIR$/src/tests/RomanTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MPMP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MPMP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/firstLesson/Converter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/Lesson01/Converter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/firstLesson/FirstLesson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/Lesson01/Lesson1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyTools/Reader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/myTools/Reader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/Lesson01/Converter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson01/Converter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/Lesson01/Lesson1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson01/Lesson1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/Lesson2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/Lesson2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +26,7 @@
         <option value="Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -61,10 +64,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
     "Kotlin.Main.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.RomanTest.equalsTest.executor": "Run",
+    "TestNG.RomanTest.executor": "Run",
+    "TestNG.RomanTest.intToRomanTest.executor": "Run",
+    "TestNG.RomanTest.romanMinusTest.executor": "Run",
+    "TestNG.RomanTest.romanPlusTest.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "settings.qodana"
@@ -77,13 +89,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.MainKt">
-    <configuration name="Main" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="MPMP" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="MPMP" />
@@ -91,13 +96,84 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RomanTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RomanTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RomanTest.equalsTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RomanTest" />
+      <option name="METHOD_NAME" value="equalsTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RomanTest.romanMinusTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RomanTest" />
+      <option name="METHOD_NAME" value="romanMinusTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RomanTest.romanPlusTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RomanTest" />
+      <option name="METHOD_NAME" value="romanPlusTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Kotlin.Main" />
-        <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Kotlin.Main" />
-        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="TestNG.RomanTest.equalsTest" />
+        <item itemvalue="TestNG.RomanTest.romanMinusTest" />
+        <item itemvalue="TestNG.RomanTest.romanPlusTest" />
+        <item itemvalue="TestNG.RomanTest" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708275668587</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Second lesson. Solved first task and started Roman numbers. Completed Numbers and CompareTo intefaces">
+      <option name="closed" value="true" />
+      <created>1708458703637</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708458703637</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,6 +279,8 @@
     <MESSAGE value="FirstTask polished" />
     <MESSAGE value="FirstTask bug fixed" />
     <MESSAGE value="FirstTask some updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="FirstTask some updates" />
+    <MESSAGE value="Second lesson. Solved first task and started Roman numbers. Completed Numbers and CompareTo intefaces" />
+    <MESSAGE value="Second lesson. RomanNum completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second lesson. RomanNum completed" />
   </component>
 </project>

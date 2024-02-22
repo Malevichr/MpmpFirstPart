@@ -1,4 +1,4 @@
-package lessons.Lesson01
+package lessons.lesson01
 
 import kotlin.math.pow
 

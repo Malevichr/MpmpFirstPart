@@ -1,6 +1,6 @@
 package lessons.lesson02
 
-import MyTools.MyReader
+import myTools.MyReader
 
 
 /**
@@ -38,6 +38,8 @@ class Lesson2(private val taskNumber: Int) {
         println(B)
     }
     private fun taskRomanClass() {
-        println(RomanNum(RomanNum.MAX_ROMAN_VALUE).toInt())
+        val num = MyReader.intInput()
+        println(num.toRoman().getValue())
+        println(num.toRoman().toInt())
     }
 }

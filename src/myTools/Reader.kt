@@ -1,4 +1,4 @@
-package MyTools
+package myTools
 
 object MyReader{
     fun intInput(): Int{

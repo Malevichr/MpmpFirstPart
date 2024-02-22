@@ -1,4 +1,3 @@
-import MyTools.MyReader
 import lessons.lesson02.Lesson2
 
 fun main() {
