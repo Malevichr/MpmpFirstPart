@@ -39,7 +39,7 @@ class Lesson2(private val taskNumber: Int) {
     }
     private fun taskRomanClass() {
         val num = MyReader.intInput()
-        println(num.toRoman().getValue())
+        println(num.toRoman().getRomanValue())
         println(num.toRoman().toInt())
     }
 }

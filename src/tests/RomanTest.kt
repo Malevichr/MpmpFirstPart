@@ -21,13 +21,13 @@ class RomanTest {
     @Test
     fun romanPlusTest(){
         for (i in 1..1000){
-            assertEquals((i + 2*i).toRoman().getValue(), (i.toRoman() + 2*i).getValue())
+            assertEquals((i + 2*i).toRoman().getRomanValue(), (i.toRoman() + 2*i).getRomanValue())
         }
     }
     @Test
     fun romanMinusTest(){
         for (i in 1..1000){
-            assertEquals((3*i - i).toRoman().getValue(), ((3*i).toRoman() - i).getValue())
+            assertEquals((3*i - i).toRoman().getRomanValue(), ((3*i).toRoman() - i).getRomanValue())
         }
     }
     @Test
@@ -36,6 +36,4 @@ class RomanTest {
             assertEquals(i.toRoman() == i.toRoman(), true)
         }
     }
-
-
 }

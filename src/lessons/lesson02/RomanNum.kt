@@ -2,7 +2,7 @@ package lessons.lesson02
 
 class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
     private val intValue: Int
-
+    constructor(number: Number): this(toRoman(number).getRomanValue())
     companion object {
         const val MIN_INT_VALUE: Int = 1
         const val MAX_INT_VALUE: Int = 3999
@@ -23,6 +23,50 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
             "IV" to 4,
             "I" to 1
         )
+        fun toRoman(number:Number): RomanNum {
+            val romanSymbols: Array<String> = arrayOf(
+                "M",
+                "CM",
+                "D",
+                "CD",
+                "C",
+                "XC",
+                "L",
+                "XL",
+                "X",
+                "IX",
+                "V",
+                "IV",
+                "I"
+            )
+            val romanValues: Array<Int> = arrayOf(
+                1000,
+                900,
+                500,
+                400,
+                100,
+                90,
+                50,
+                40,
+                10,
+                9,
+                5,
+                4,
+                1
+            )
+            var intNumber: Int = number.toInt()
+            var result = ""
+            var i = 0
+            while (intNumber > 0) {
+                try {
+                    result += romanSymbols[i].repeat((intNumber / romanValues[i]))
+                } catch (_: Exception) {
+                }
+                intNumber %= romanValues[i]
+                i++
+            }
+            return RomanNum(result)
+        }
     }
 
     init {
@@ -30,8 +74,11 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
         intValue = toInt()
     }
 
-    fun getValue(): String {
+    fun getRomanValue(): String {
         return romanNum
+    }
+    fun getIntValue():Int{
+        return intValue
     }
 
     override fun toByte(): Byte {
@@ -78,7 +125,7 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
         return if ((result > MIN_INT_VALUE) and (result < MAX_INT_VALUE))
             result.toRoman()
         else
-            throw IllegalArgumentException("Result of range($MIN_ROMAN_VALUE..$MAX_ROMAN_VALUE)")
+            throw IllegalArgumentException("Result out of range($MIN_ROMAN_VALUE..$MAX_ROMAN_VALUE)")
     }
 
     operator fun plus(value: Number): RomanNum {
@@ -136,48 +183,7 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
 }
 
 fun Int.toRoman(): RomanNum {
-    val romanSymbols: Array<String> = arrayOf(
-        "M",
-        "CM",
-        "D",
-        "CD",
-        "C",
-        "XC",
-        "L",
-        "XL",
-        "X",
-        "IX",
-        "V",
-        "IV",
-        "I"
-    )
-    val romanValues: Array<Int> = arrayOf(
-        1000,
-        900,
-        500,
-        400,
-        100,
-        90,
-        50,
-        40,
-        10,
-        9,
-        5,
-        4,
-        1
-    )
-    var intNumber: Int = this
-    var result = ""
-    var i = 0
-    while (intNumber > 0) {
-        try {
-            result += romanSymbols[i].repeat((intNumber / romanValues[i]))
-        } catch (_: Exception) {
-        }
-        intNumber %= romanValues[i]
-        i++
-    }
-    return RomanNum(result)
+    return RomanNum.toRoman(this)
 }
 
 fun Byte.toRoman(): RomanNum {

@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Second lesson. RomanNum completed">
+    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Second lesson. Class RomanNum bug fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/Lesson2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/Lesson2.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/RomanTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/RomanTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +45,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -81,7 +84,7 @@
       <recent name="lessons.Lesson1" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt">
+  <component name="RunManager" selected="TestNG.RomanTest">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="MPMP" />
@@ -162,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.RomanTest" />
         <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="TestNG.RomanTest.equalsTest" />
         <item itemvalue="TestNG.RomanTest.romanMinusTest" />
         <item itemvalue="TestNG.RomanTest.romanPlusTest" />
-        <item itemvalue="TestNG.RomanTest" />
       </list>
     </recent_temporary>
   </component>
@@ -258,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708594021861</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Second lesson. Class RomanNum bug fix">
+      <option name="closed" value="true" />
+      <created>1708594911820</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708594911820</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,6 +293,7 @@
     <MESSAGE value="FirstTask some updates" />
     <MESSAGE value="Second lesson. Solved first task and started Roman numbers. Completed Numbers and CompareTo intefaces" />
     <MESSAGE value="Second lesson. RomanNum completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second lesson. RomanNum completed" />
+    <MESSAGE value="Second lesson. Class RomanNum bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second lesson. Class RomanNum bug fix" />
   </component>
 </project>
