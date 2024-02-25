@@ -5,7 +5,7 @@ import org.testng.AssertJUnit.assertEquals
 import org.testng.annotations.Test
 
 
-class RomanTest {
+class RomanNumTest {
     @Test
     fun intToRomanTest(){
         for(i in 1..3999){

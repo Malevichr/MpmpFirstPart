@@ -2,7 +2,9 @@ package lessons.lesson02
 
 class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
     private val intValue: Int
-    constructor(number: Number): this(toRoman(number).getRomanValue())
+
+    constructor(number: Number) : this(toRoman(number).getRomanValue())
+
     companion object {
         const val MIN_INT_VALUE: Int = 1
         const val MAX_INT_VALUE: Int = 3999
@@ -23,37 +25,39 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
             "IV" to 4,
             "I" to 1
         )
-        fun toRoman(number:Number): RomanNum {
-            val romanSymbols: Array<String> = arrayOf(
-                "M",
-                "CM",
-                "D",
-                "CD",
-                "C",
-                "XC",
-                "L",
-                "XL",
-                "X",
-                "IX",
-                "V",
-                "IV",
-                "I"
-            )
-            val romanValues: Array<Int> = arrayOf(
-                1000,
-                900,
-                500,
-                400,
-                100,
-                90,
-                50,
-                40,
-                10,
-                9,
-                5,
-                4,
-                1
-            )
+        private val romanSymbols: Array<String> = arrayOf(
+            "M",
+            "CM",
+            "D",
+            "CD",
+            "C",
+            "XC",
+            "L",
+            "XL",
+            "X",
+            "IX",
+            "V",
+            "IV",
+            "I"
+        )
+        private val romanValues: Array<Int> = arrayOf(
+            1000,
+            900,
+            500,
+            400,
+            100,
+            90,
+            50,
+            40,
+            10,
+            9,
+            5,
+            4,
+            1
+        )
+
+        fun toRoman(number: Number): RomanNum {
+
             var intNumber: Int = number.toInt()
             var result = ""
             var i = 0
@@ -77,7 +81,8 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
     fun getRomanValue(): String {
         return romanNum
     }
-    fun getIntValue():Int{
+
+    fun getIntValue(): Int {
         return intValue
     }
 
@@ -97,7 +102,8 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
         var result = 0
         var index = 0
         while (index < romanNum.length) {
-            val subNum: String = if (index == romanNum.length - 1) romanNum[index].toString() else romanNum[index].toString() + romanNum[index + 1].toString()
+            val subNum: String =
+                if (index == romanNum.length - 1) romanNum[index].toString() else romanNum[index].toString() + romanNum[index + 1].toString()
             if (romanSymbolsToValues.contains(subNum)) {
                 result += (romanSymbolsToValues[subNum] ?: 0)
                 index++
