@@ -57,8 +57,10 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
         )
 
         fun toRoman(number: Number): RomanNum {
-
             var intNumber: Int = number.toInt()
+            if ((intNumber < MIN_INT_VALUE) or (intNumber > MAX_INT_VALUE))
+                throw IllegalArgumentException("Out of range($MIN_INT_VALUE..$MAX_INT_VALUE)")
+
             var result = ""
             var i = 0
             while (intNumber > 0) {
