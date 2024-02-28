@@ -1,15 +1,20 @@
 package lessons.lesson02
 
-class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
-    private val intValue: Int
+class RomanNum(romanNum: String) : Number(), Comparable<RomanNum> {
 
-    constructor(number: Number) : this(toRoman(number).getRomanValue())
+    val intValue: Int
+    init {
+        RomanValidator(romanNum).validate()
+        intValue = toIntFromRoman(romanNum)
+    }
+    constructor(number: Number) : this(toRomanString(number))
 
     companion object {
         const val MIN_INT_VALUE: Int = 1
         const val MAX_INT_VALUE: Int = 3999
         const val MIN_ROMAN_VALUE: String = "I"
         const val MAX_ROMAN_VALUE: String = "MMMCMXCIX"
+
         private val romanSymbolsToValues: Map<String, Int> = mapOf(
             "M" to 1000,
             "CM" to 900,
@@ -56,36 +61,40 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
             1
         )
 
-        fun toRoman(number: Number): RomanNum {
+        private fun toRomanString(number: Number): String {
             var intNumber: Int = number.toInt()
+
             if ((intNumber < MIN_INT_VALUE) or (intNumber > MAX_INT_VALUE))
-                throw IllegalArgumentException("Out of range($MIN_INT_VALUE..$MAX_INT_VALUE)")
+                throw IllegalArgumentException("Out of range[$MIN_INT_VALUE..$MAX_INT_VALUE]")
 
             var result = ""
             var i = 0
             while (intNumber > 0) {
                 try {
                     result += romanSymbols[i].repeat((intNumber / romanValues[i]))
-                } catch (_: Exception) {
-                }
+                } catch (_: Exception) { }
+
                 intNumber %= romanValues[i]
                 i++
             }
-            return RomanNum(result)
+            return result
         }
-    }
-
-    init {
-        RomanValidator(romanNum).validate()
-        intValue = toInt()
-    }
-
-    fun getRomanValue(): String {
-        return romanNum
-    }
-
-    fun getIntValue(): Int {
-        return intValue
+        private fun toIntFromRoman(romanNum: String): Int{
+            var result = 0
+            var index = 0
+            while (index < romanNum.length) {
+                val subNum: String =
+                    if (index == romanNum.length - 1) romanNum[index].toString() else romanNum[index].toString() + romanNum[index + 1].toString()
+                if (romanSymbolsToValues.contains(subNum)) {
+                    result += (romanSymbolsToValues[subNum] ?: 0)
+                    index++
+                } else {
+                    result += (romanSymbolsToValues[romanNum[index].toString()] ?: 0)
+                }
+                index++
+            }
+            return result
+        }
     }
 
     override fun toByte(): Byte {
@@ -100,21 +109,9 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
         return intValue.toFloat()
     }
 
+
     override fun toInt(): Int {
-        var result = 0
-        var index = 0
-        while (index < romanNum.length) {
-            val subNum: String =
-                if (index == romanNum.length - 1) romanNum[index].toString() else romanNum[index].toString() + romanNum[index + 1].toString()
-            if (romanSymbolsToValues.contains(subNum)) {
-                result += (romanSymbolsToValues[subNum] ?: 0)
-                index++
-            } else {
-                result += (romanSymbolsToValues[romanNum[index].toString()] ?: 0)
-            }
-            index++
-        }
-        return result
+        return intValue
     }
 
     override fun toLong(): Long {
@@ -131,17 +128,14 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
 
     private fun resultValidate(result: Int): RomanNum {
         return if ((result > MIN_INT_VALUE) and (result < MAX_INT_VALUE))
-            result.toRoman()
+            RomanNum(result)
         else
-            throw IllegalArgumentException("Result out of range($MIN_ROMAN_VALUE..$MAX_ROMAN_VALUE)")
+            throw IllegalArgumentException("Result out of range [$MIN_ROMAN_VALUE..$MAX_ROMAN_VALUE]")
     }
 
     operator fun plus(value: Number): RomanNum {
         val result = this.intValue + value.toInt()
-        return if ((result > MIN_INT_VALUE) and (result < MAX_INT_VALUE))
-            result.toRoman()
-        else
-            throw IllegalArgumentException("Result of range($MIN_ROMAN_VALUE..$MAX_ROMAN_VALUE)")
+        return resultValidate(result)
     }
 
     operator fun minus(value: Number): RomanNum {
@@ -175,9 +169,7 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
     }
 
     override fun hashCode(): Int {
-        var result = romanNum.hashCode()
-        result = 31 * result + intValue
-        return result
+        return intValue.hashCode()
     }
 
     override fun equals(other: Any?): Boolean {
@@ -186,12 +178,16 @@ class RomanNum(private val romanNum: String) : Number(), Comparable<RomanNum> {
 
         other as RomanNum
 
-        return romanNum == other.romanNum
+        return intValue == other.intValue
+    }
+
+    override fun toString(): String {
+        return toRomanString(intValue)
     }
 }
 
 fun Int.toRoman(): RomanNum {
-    return RomanNum.toRoman(this)
+    return RomanNum(this)
 }
 
 fun Byte.toRoman(): RomanNum {

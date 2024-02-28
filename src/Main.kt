@@ -6,6 +6,4 @@ fun main() {
 //    println("Enter task")
 //    val number = MyReader.intInput()
     Lesson2(2).start()
-//    print(RomanNum(0))
-
 }

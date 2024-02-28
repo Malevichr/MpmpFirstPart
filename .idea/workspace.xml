@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Second lesson. Roman polished">
+    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Second lesson. Roman bug  fixed">
+      <change afterPath="$PROJECT_DIR$/src/lessons/lesson3/Lesson3.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/Lesson2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/Lesson2.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/myTools/Reader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/myTools/MyReader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/RomanNumTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/RomanNumTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +24,8 @@
         <option value="Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -56,26 +60,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Kotlin.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TestNG.RomanTest.equalsTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RomanTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RomanTest.intToRomanTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RomanTest.romanMinusTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RomanTest.romanPlusTest.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Kotlin.Main.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.RomanNumTest.executor": "Run",
+    "TestNG.RomanTest.equalsTest.executor": "Run",
+    "TestNG.RomanTest.executor": "Run",
+    "TestNG.RomanTest.intToRomanTest.executor": "Run",
+    "TestNG.RomanTest.romanMinusTest.executor": "Run",
+    "TestNG.RomanTest.romanPlusTest.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "settings.qodana"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="lessons.Lesson2" />
@@ -86,6 +91,23 @@
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="MPMP" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RomanNumTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RomanNumTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,24 +148,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RomanNumTest.romanPlusTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MPMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RomanNumTest" />
-      <option name="METHOD_NAME" value="romanPlusTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RomanTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MPMP" />
       <extension name="coverage">
@@ -164,10 +168,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="TestNG.RomanNumTest" />
         <item itemvalue="TestNG.RomanTest" />
         <item itemvalue="TestNG.RomanNumTest.equalsTest" />
         <item itemvalue="TestNG.RomanNumTest.romanMinusTest" />
-        <item itemvalue="TestNG.RomanNumTest.romanPlusTest" />
       </list>
     </recent_temporary>
   </component>
@@ -283,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708885077383</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Second lesson. Roman bug  fixed">
+      <option name="closed" value="true" />
+      <created>1709012766589</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1709012766590</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -310,6 +322,7 @@
     <MESSAGE value="Second lesson. Class RomanNum bug fix" />
     <MESSAGE value="Second lesson. toRoman function has been redesigned" />
     <MESSAGE value="Second lesson. Roman polished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second lesson. Roman polished" />
+    <MESSAGE value="Second lesson. Roman bug  fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second lesson. Roman bug  fixed" />
   </component>
 </project>
