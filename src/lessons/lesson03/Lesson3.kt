@@ -1,5 +1,4 @@
-package lessons.lesson3
-import myTools.MyReader
+package lessons.lesson03
 
 class Lesson3(private val taskNumber: Int) {
     fun start() {

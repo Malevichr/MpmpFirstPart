@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Second lesson. Roman refactoring with the teacher's instructions">
+    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Second lesson. RomanNum constructor refactor">
+      <change afterPath="$PROJECT_DIR$/src/lessons/lesson04/FractionalNumber.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/FractionalNumberTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/lesson3/Lesson3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson3/Lesson3.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/lesson3/Lesson3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson03/Lesson3.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,8 @@
         <option value="Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -56,42 +58,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Kotlin.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TestNG.RomanNumTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RomanTest.equalsTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RomanTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RomanTest.intToRomanTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RomanTest.romanMinusTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RomanTest.romanPlusTest.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Kotlin.Main.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.FractionalNumberTest.initTest1.executor": "Run",
+    "TestNG.FractionalNumberTest.initWithExceptionTest1.executor": "Run",
+    "TestNG.FractionalNumberTest.toStringTest1.executor": "Run",
+    "TestNG.FractionalNumberTest.toStringTest2.executor": "Run",
+    "TestNG.RomanNumTest.executor": "Run",
+    "TestNG.RomanTest.equalsTest.executor": "Run",
+    "TestNG.RomanTest.executor": "Run",
+    "TestNG.RomanTest.intToRomanTest.executor": "Run",
+    "TestNG.RomanTest.romanMinusTest.executor": "Run",
+    "TestNG.RomanTest.romanPlusTest.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "settings.qodana"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="lessons.Lesson2" />
       <recent name="lessons.Lesson1" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt">
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainKt" />
-      <module name="MPMP" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RomanNumTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.FractionalNumberTest.initWithExceptionTest4">
+    <configuration name="FractionalNumberTest.initWithExceptionTest1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MPMP" />
       <extension name="coverage">
         <pattern>
@@ -100,25 +99,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RomanNumTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RomanNumTest.equalsTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MPMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RomanNumTest" />
-      <option name="METHOD_NAME" value="equalsTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
+      <option name="METHOD_NAME" value="initWithExceptionTest1" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -126,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RomanNumTest.romanMinusTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FractionalNumberTest.initWithExceptionTest2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MPMP" />
       <extension name="coverage">
         <pattern>
@@ -135,8 +117,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RomanNumTest" />
-      <option name="METHOD_NAME" value="romanMinusTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
+      <option name="METHOD_NAME" value="initWithExceptionTest2" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -144,7 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RomanTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FractionalNumberTest.initWithExceptionTest3" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MPMP" />
       <extension name="coverage">
         <pattern>
@@ -153,8 +135,45 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RomanTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
+      <option name="METHOD_NAME" value="initWithExceptionTest3" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FractionalNumberTest.initWithExceptionTest4" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
+      <option name="METHOD_NAME" value="initWithExceptionTest4" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FractionalNumberTest.toStringTest2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
+      <option name="METHOD_NAME" value="toStringTest2" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -163,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="TestNG.RomanNumTest" />
-        <item itemvalue="TestNG.RomanTest" />
-        <item itemvalue="TestNG.RomanNumTest.equalsTest" />
-        <item itemvalue="TestNG.RomanNumTest.romanMinusTest" />
+        <item itemvalue="TestNG.FractionalNumberTest.initWithExceptionTest4" />
+        <item itemvalue="TestNG.FractionalNumberTest.initWithExceptionTest3" />
+        <item itemvalue="TestNG.FractionalNumberTest.initWithExceptionTest2" />
+        <item itemvalue="TestNG.FractionalNumberTest.initWithExceptionTest1" />
+        <item itemvalue="TestNG.FractionalNumberTest.toStringTest2" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +318,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709135091604</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Second lesson. RomanNum constructor refactor">
+      <option name="closed" value="true" />
+      <created>1709635480418</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1709635480418</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,6 +355,7 @@
     <MESSAGE value="Second lesson. Roman polished" />
     <MESSAGE value="Second lesson. Roman bug  fixed" />
     <MESSAGE value="Second lesson. Roman refactoring with the teacher's instructions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second lesson. Roman refactoring with the teacher's instructions" />
+    <MESSAGE value="Second lesson. RomanNum constructor refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second lesson. RomanNum constructor refactor" />
   </component>
 </project>
