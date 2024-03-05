@@ -1,13 +1,11 @@
 package lessons.lesson02
 
-class RomanNum(romanNum: String) : Number(), Comparable<RomanNum> {
-
-    val intValue: Int
+class RomanNum(val intValue:Int) : Number(), Comparable<RomanNum> {
     init {
-        RomanValidator(romanNum).validate()
-        intValue = toIntFromRoman(romanNum)
+        if (!((intValue > MIN_INT_VALUE) and (intValue < MAX_INT_VALUE)))
+            throw IllegalArgumentException("Result out of range [$MIN_ROMAN_VALUE..$MAX_ROMAN_VALUE]")
     }
-    constructor(number: Number) : this(toRomanString(number))
+    constructor(romanNum: String) : this(toIntFromRoman(romanNum))
 
     companion object {
         const val MIN_INT_VALUE: Int = 1
@@ -80,6 +78,7 @@ class RomanNum(romanNum: String) : Number(), Comparable<RomanNum> {
             return result
         }
         private fun toIntFromRoman(romanNum: String): Int{
+            RomanValidator(romanNum).validate()
             var result = 0
             var index = 0
             while (index < romanNum.length) {
