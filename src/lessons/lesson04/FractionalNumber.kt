@@ -1,6 +1,7 @@
 package lessons.lesson04
 
 import lessons.lesson02.Validator
+import kotlin.math.abs
 
 
 class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumber> {
@@ -28,22 +29,18 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
     constructor(number: Number) : this(toFractional(number))
 
     companion object {
-        private fun toFractional(number: Number): String {
+        fun toFractional(number: Number): String {
             if (number is FractionalNumber)
                 return number.toString()
 
             var numerator = number.toDouble()
             var denominator = 1.0
 
-            while (numerator % 1 != 0.0) {
+            while ((numerator % 1 != 0.0) and (abs(numerator)*10 < Int.MAX_VALUE) and (abs(denominator)*10 < Int.MAX_VALUE)) {
                 numerator *= 10
                 denominator *= 10
             }
 
-            if ((Int.MIN_VALUE < numerator) or (numerator > Int.MAX_VALUE))
-                throw IllegalArgumentException("Numerator out of range")
-            if ((Int.MIN_VALUE < denominator) or (denominator > Int.MAX_VALUE))
-                throw (IllegalArgumentException("Denominator out of range"))
 
             var gcd = getGreatestCommonDivisor(numerator.toInt(), denominator.toInt())
 
