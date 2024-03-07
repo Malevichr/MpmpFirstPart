@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Fourth lesson. FractionalNumber. Added initialization by Number">
+    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Fourth lesson. FractionalNumber. Bug fix and operators refactored">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lessons/lesson04/FractionalNumber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson04/FractionalNumber.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/FractionalNumberTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/FractionalNumberTest.kt" afterDir="false" />
@@ -68,6 +68,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "TestNG.FractionalNumberTest.divTest.executor": "Run",
     "TestNG.FractionalNumberTest.doubleInitTest.executor": "Run",
+    "TestNG.FractionalNumberTest.doubleInitTest1.executor": "Run",
     "TestNG.FractionalNumberTest.doubleInitTest2.executor": "Run",
     "TestNG.FractionalNumberTest.equalsTest.executor": "Run",
     "TestNG.FractionalNumberTest.equalsTest1.executor": "Run",
@@ -80,6 +81,7 @@
     "TestNG.FractionalNumberTest.initWithExceptionTest3.executor": "Run",
     "TestNG.FractionalNumberTest.initWithExceptionTest4.executor": "Run",
     "TestNG.FractionalNumberTest.initWithExceptionTest5.executor": "Run",
+    "TestNG.FractionalNumberTest.initWithExceptionTest6.executor": "Run",
     "TestNG.FractionalNumberTest.intInitTest.executor": "Run",
     "TestNG.FractionalNumberTest.minusTest.executor": "Run",
     "TestNG.FractionalNumberTest.plusAssign.executor": "Run",
@@ -113,7 +115,7 @@
       <recent name="lessons.Lesson1" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.FractionalNumberTest.doubleInitTest2">
+  <component name="RunManager" selected="TestNG.FractionalNumberTest.initWithExceptionTest6">
     <configuration name="FractionalNumberTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MPMP" />
       <extension name="coverage">
@@ -125,6 +127,24 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FractionalNumberTest.doubleInitTest1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
+      <option name="METHOD_NAME" value="doubleInitTest1" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -149,7 +169,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FractionalNumberTest.equalsTest1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FractionalNumberTest.initWithExceptionTest6" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MPMP" />
       <extension name="coverage">
         <pattern>
@@ -159,7 +179,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
-      <option name="METHOD_NAME" value="equalsTest1" />
+      <option name="METHOD_NAME" value="initWithExceptionTest6" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -167,7 +187,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FractionalNumberTest.equalsTest2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FractionalNumberTest.intInitTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MPMP" />
       <extension name="coverage">
         <pattern>
@@ -177,25 +197,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
-      <option name="METHOD_NAME" value="equalsTest2" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FractionalNumberTest.plusTest1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MPMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
-      <option name="METHOD_NAME" value="plusTest1" />
+      <option name="METHOD_NAME" value="intInitTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -205,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.FractionalNumberTest.doubleInitTest2" />
+        <item itemvalue="TestNG.FractionalNumberTest.initWithExceptionTest6" />
         <item itemvalue="TestNG.FractionalNumberTest" />
-        <item itemvalue="TestNG.FractionalNumberTest.plusTest1" />
-        <item itemvalue="TestNG.FractionalNumberTest.equalsTest1" />
-        <item itemvalue="TestNG.FractionalNumberTest.equalsTest2" />
+        <item itemvalue="TestNG.FractionalNumberTest.doubleInitTest1" />
+        <item itemvalue="TestNG.FractionalNumberTest.intInitTest" />
+        <item itemvalue="TestNG.FractionalNumberTest.doubleInitTest2" />
       </list>
     </recent_temporary>
   </component>
@@ -373,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709832498681</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fourth lesson. FractionalNumber. Bug fix and operators refactored">
+      <option name="closed" value="true" />
+      <created>1709833908402</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1709833908402</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -406,6 +416,7 @@
     <MESSAGE value="Fourth lesson. FractionalNumber. Created initialisation, validation and toString()" />
     <MESSAGE value="Fourth lesson. FractionalNumber. The basic functionality is completed" />
     <MESSAGE value="Fourth lesson. FractionalNumber. Added initialization by Number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth lesson. FractionalNumber. Added initialization by Number" />
+    <MESSAGE value="Fourth lesson. FractionalNumber. Bug fix and operators refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fourth lesson. FractionalNumber. Bug fix and operators refactored" />
   </component>
 </project>

@@ -55,6 +55,12 @@ class FractionalNumberTest {
             FractionalNumber("-0/0")
         }
     }
+    @Test
+    fun initWithExceptionTest6() {
+        assertThrows(IllegalArgumentException::class.java) {
+            FractionalNumber(1/3)
+        }
+    }
     fun initTest(){
         val fractionalNumber1 = FractionalNumber("4/5")
         val newFractionalNumber = FractionalNumber(fractionalNumber1)

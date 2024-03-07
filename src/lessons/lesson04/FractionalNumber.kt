@@ -24,26 +24,33 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
             throw IllegalArgumentException("Denominator is zero")
 
     }
+
     constructor(number: Number) : this(toFractional(number))
 
     companion object {
-        private fun toFractional(number: Number): String{
+        private fun toFractional(number: Number): String {
             if (number is FractionalNumber)
                 return number.toString()
 
             var numerator = number.toDouble()
-            var denominator = 1
+            var denominator = 1.0
 
-            while (numerator % 1 != 0.0){
+            while (numerator % 1 != 0.0) {
                 numerator *= 10
                 denominator *= 10
             }
-            var gcd = getGreatestCommonDivisor(numerator.toInt(), denominator)
+
+            if ((Int.MIN_VALUE < numerator) or (numerator > Int.MAX_VALUE))
+                throw IllegalArgumentException("Numerator out of range")
+            if ((Int.MIN_VALUE < denominator) or (denominator > Int.MAX_VALUE))
+                throw (IllegalArgumentException("Denominator out of range"))
+
+            var gcd = getGreatestCommonDivisor(numerator.toInt(), denominator.toInt())
 
             if ((numerator < 0) and (denominator > 0))
                 gcd *= -1
 
-            return (numerator.toInt() / gcd).toString() + "/" + (denominator / gcd)
+            return (numerator.toInt() / gcd).toString() + "/" + (denominator.toInt() / gcd)
         }
 
         private fun getGreatestCommonDivisor(a: Int, b: Int): Int {
@@ -91,7 +98,8 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
         val otherFractionalNumber = FractionalNumber(other)
 
         val denominator = this.denominator * otherFractionalNumber.denominator
-        val numerator = this.numerator * otherFractionalNumber.denominator + otherFractionalNumber.numerator * this.denominator
+        val numerator =
+            this.numerator * otherFractionalNumber.denominator + otherFractionalNumber.numerator * this.denominator
         return FractionalNumber("$numerator/$denominator").shortenFraction()
     }
 
@@ -100,7 +108,8 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
         val otherFractionalNumber = FractionalNumber(other)
 
         val denominator = this.denominator * otherFractionalNumber.denominator
-        val numerator = this.numerator * otherFractionalNumber.denominator - otherFractionalNumber.numerator * this.denominator
+        val numerator =
+            this.numerator * otherFractionalNumber.denominator - otherFractionalNumber.numerator * this.denominator
         return FractionalNumber("$numerator/$denominator").shortenFraction()
     }
 
