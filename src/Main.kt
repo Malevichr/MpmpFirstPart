@@ -5,5 +5,4 @@ fun main() {
 
 //    println("Enter task")
 //    val number = MyReader.intInput()
-    print("123".substringAfter("/").toInt())
 }

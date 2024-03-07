@@ -8,6 +8,16 @@ import org.testng.annotations.Test
 @Test
 class FractionalNumberTest {
     @Test
+    fun intInitTest(){
+        val fractionalNumber = FractionalNumber(5)
+        assertEquals("5/1", fractionalNumber.toString())
+    }
+    @Test
+    fun doubleInitTest(){
+        val fractionalNumber = FractionalNumber(5.5)
+        assertEquals("11/2", fractionalNumber.toString())
+    }
+    @Test
     fun initWithExceptionTest1() {
         assertThrows(IllegalArgumentException::class.java) {
             FractionalNumber("1234УВЫА")

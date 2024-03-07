@@ -26,6 +26,36 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
     }
 
     constructor(fractionalNumber: FractionalNumber) : this(fractionalNumber.toString())
+    constructor(number: Number) : this(toFractional(number))
+
+    companion object {
+        private fun toFractional(number: Number): String{
+            var numerator = number.toDouble()
+            var denominator = 1
+
+            while (numerator % 1 != 0.0){
+                numerator *= 10
+                denominator *= 10
+            }
+            var gcd = getGreatestCommonDivisor(numerator.toInt(), denominator)
+
+            if ((numerator < 0) and (denominator > 0))
+                gcd *= -1
+
+            return (numerator.toInt() / gcd).toString() + "/" + (denominator / gcd)
+        }
+
+        private fun getGreatestCommonDivisor(a: Int, b: Int): Int {
+            var num1 = a
+            var num2 = b
+            while (num2 != 0) {
+                val temp = num2
+                num2 = num1 % num2
+                num1 = temp
+            }
+            return num1
+        }
+    }
 
     override fun compareTo(other: FractionalNumber): Int {
         return this.toDouble().compareTo(other.toDouble())
@@ -56,24 +86,12 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
         return FractionalNumber((numerator / gcd).toString() + "/" + (denominator / gcd))
     }
 
-    private fun getGreatestCommonDivisor(a: Int, b: Int): Int {
-        var num1 = a
-        var num2 = b
-        while (num2 != 0) {
-            val temp = num2
-            num2 = num1 % num2
-            num1 = temp
-        }
-        return num1
-    }
-
     operator fun plus(other: FractionalNumber): FractionalNumber {
         val denominator = this.denominator * other.denominator
         val numerator = this.numerator * other.denominator + other.numerator * this.denominator
         return FractionalNumber("$numerator/$denominator").shortenFraction()
     }
 
-    
 
     operator fun minus(other: FractionalNumber): FractionalNumber {
         val denominator = this.denominator * other.denominator
