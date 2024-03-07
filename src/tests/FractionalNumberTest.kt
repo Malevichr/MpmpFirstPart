@@ -13,9 +13,14 @@ class FractionalNumberTest {
         assertEquals("5/1", fractionalNumber.toString())
     }
     @Test
-    fun doubleInitTest(){
+    fun doubleInitTest1(){
         val fractionalNumber = FractionalNumber(5.5)
         assertEquals("11/2", fractionalNumber.toString())
+    }
+    @Test
+    fun doubleInitTest2(){
+        val fractionalNumber = FractionalNumber(-0.45)
+        assertEquals("-9/20", fractionalNumber.toString())
     }
     @Test
     fun initWithExceptionTest1() {
@@ -142,7 +147,7 @@ class FractionalNumberTest {
         val fractionalNumber = FractionalNumber("4/2")
         assertEquals("-2/1", (-fractionalNumber).toString())
     }
-    fun equalsTest(){
+    fun equalsTest1(){
         val fractionalNumberFirst = FractionalNumber("4/2")
         val fractionalNumberSecond = FractionalNumber("8/4")
         assertEquals(true, fractionalNumberFirst == fractionalNumberSecond)

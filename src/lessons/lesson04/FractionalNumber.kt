@@ -24,12 +24,13 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
             throw IllegalArgumentException("Denominator is zero")
 
     }
-
-    constructor(fractionalNumber: FractionalNumber) : this(fractionalNumber.toString())
     constructor(number: Number) : this(toFractional(number))
 
     companion object {
         private fun toFractional(number: Number): String{
+            if (number is FractionalNumber)
+                return number.toString()
+
             var numerator = number.toDouble()
             var denominator = 1
 
@@ -86,28 +87,36 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
         return FractionalNumber((numerator / gcd).toString() + "/" + (denominator / gcd))
     }
 
-    operator fun plus(other: FractionalNumber): FractionalNumber {
-        val denominator = this.denominator * other.denominator
-        val numerator = this.numerator * other.denominator + other.numerator * this.denominator
+    operator fun plus(other: Number): FractionalNumber {
+        val otherFractionalNumber = FractionalNumber(other)
+
+        val denominator = this.denominator * otherFractionalNumber.denominator
+        val numerator = this.numerator * otherFractionalNumber.denominator + otherFractionalNumber.numerator * this.denominator
         return FractionalNumber("$numerator/$denominator").shortenFraction()
     }
 
 
-    operator fun minus(other: FractionalNumber): FractionalNumber {
-        val denominator = this.denominator * other.denominator
-        val numerator = this.numerator * other.denominator - other.numerator * this.denominator
+    operator fun minus(other: Number): FractionalNumber {
+        val otherFractionalNumber = FractionalNumber(other)
+
+        val denominator = this.denominator * otherFractionalNumber.denominator
+        val numerator = this.numerator * otherFractionalNumber.denominator - otherFractionalNumber.numerator * this.denominator
         return FractionalNumber("$numerator/$denominator").shortenFraction()
     }
 
-    operator fun div(other: FractionalNumber): FractionalNumber {
-        val numerator = this.numerator * other.denominator
-        val denominator = this.denominator * other.numerator
+    operator fun div(other: Number): FractionalNumber {
+        val otherFractionalNumber = FractionalNumber(other)
+
+        val numerator = this.numerator * otherFractionalNumber.denominator
+        val denominator = this.denominator * otherFractionalNumber.numerator
         return FractionalNumber("$numerator/$denominator").shortenFraction()
     }
 
-    operator fun times(other: FractionalNumber): FractionalNumber {
-        val numerator = this.numerator * other.numerator
-        val denominator = this.denominator * other.denominator
+    operator fun times(other: Number): FractionalNumber {
+        val otherFractionalNumber = FractionalNumber(other)
+
+        val numerator = this.numerator * otherFractionalNumber.numerator
+        val denominator = this.denominator * otherFractionalNumber.denominator
         return FractionalNumber("$numerator/$denominator").shortenFraction()
     }
 
@@ -125,10 +134,7 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
 
         other as FractionalNumber
 
-        if (this.shortenFraction().numerator != other.shortenFraction().numerator) return false
-        if (this.shortenFraction().denominator != other.shortenFraction().denominator) return false
-
-        return true
+        return this.toDouble() == other.toDouble()
     }
 
     override fun hashCode(): Int {
