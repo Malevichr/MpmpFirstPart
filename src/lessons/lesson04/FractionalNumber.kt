@@ -21,22 +21,20 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
         } catch (_: Exception) {
             throw (IllegalArgumentException("Denominator out of range"))
         }
-        if (denominator == 0)
-            throw IllegalArgumentException("Denominator is zero")
+        if (denominator == 0) throw IllegalArgumentException("Denominator is zero")
 
     }
 
     constructor(number: Number) : this(toFractional(number))
 
     companion object {
-        fun toFractional(number: Number): String {
-            if (number is FractionalNumber)
-                return number.toString()
+        private fun toFractional(number: Number): String {
+            if (number is FractionalNumber) return number.toString()
 
             var numerator = number.toDouble()
             var denominator = 1.0
 
-            while ((numerator % 1 != 0.0) and (abs(numerator)*10 < Int.MAX_VALUE) and (abs(denominator)*10 < Int.MAX_VALUE)) {
+            while ((numerator % 1 != 0.0) and (abs(numerator) * 10 < Int.MAX_VALUE) and (abs(denominator) * 10 < Int.MAX_VALUE)) {
                 numerator *= 10
                 denominator *= 10
             }
@@ -44,8 +42,7 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
 
             var gcd = getGreatestCommonDivisor(numerator.toInt(), denominator.toInt())
 
-            if ((numerator < 0) and (denominator > 0))
-                gcd *= -1
+            if ((numerator < 0) and (denominator > 0)) gcd *= -1
 
             return (numerator.toInt() / gcd).toString() + "/" + (denominator.toInt() / gcd)
         }
@@ -62,17 +59,13 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
         }
     }
 
-    override fun compareTo(other: FractionalNumber): Int {
-        return this.toDouble().compareTo(other.toDouble())
-    }
+    override fun compareTo(other: FractionalNumber): Int = this.toDouble().compareTo(other.toDouble())
 
     override fun toByte(): Byte = (numerator / denominator).toByte()
 
     override fun toDouble(): Double = numerator.toDouble() / denominator
 
-
     override fun toFloat(): Float = numerator.toFloat() / denominator
-
 
     override fun toInt(): Int = numerator / denominator
 
@@ -80,14 +73,11 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
 
     override fun toShort(): Short = (numerator / denominator).toByte().toShort()
 
-    override fun toString(): String {
-        return "$numerator/$denominator"
-    }
+    override fun toString(): String = "$numerator/$denominator"
 
     fun shortenFraction(): FractionalNumber {
         var gcd = getGreatestCommonDivisor(numerator, denominator)
-        if ((numerator < 0) and (denominator > 0))
-            gcd *= -1
+        if ((numerator < 0) and (denominator > 0)) gcd *= -1
         return FractionalNumber((numerator / gcd).toString() + "/" + (denominator / gcd))
     }
 
@@ -126,13 +116,9 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
         return FractionalNumber("$numerator/$denominator").shortenFraction()
     }
 
-    operator fun unaryPlus(): FractionalNumber {
-        return FractionalNumber(this)
-    }
+    operator fun unaryPlus(): FractionalNumber = FractionalNumber(this)
 
-    operator fun unaryMinus(): FractionalNumber {
-        return (FractionalNumber(this) * FractionalNumber("-1")).shortenFraction()
-    }
+    operator fun unaryMinus(): FractionalNumber = (FractionalNumber(this) * FractionalNumber("-1")).shortenFraction()
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -156,10 +142,8 @@ class FractionalNumber(fractional: String) : Number(), Comparable<FractionalNumb
         }
 
         override fun validate(): Boolean {
-            if (!regexValidator.matches(fractionalNumber))
-                throw IllegalArgumentException("Not fraction in Integers")
-            else
-                return true
+            if (!regexValidator.matches(fractionalNumber)) throw IllegalArgumentException("Not fraction in Integers")
+            else return true
         }
 
     }
