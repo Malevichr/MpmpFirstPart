@@ -2,7 +2,7 @@ package lessons.lesson02
 
 class RomanNum(val intValue:Int) : Number(), Comparable<RomanNum> {
     init {
-        if (!((intValue > MIN_INT_VALUE) and (intValue < MAX_INT_VALUE)))
+        if (!((intValue >= MIN_INT_VALUE) and (intValue <= MAX_INT_VALUE)))
             throw IllegalArgumentException("Result out of range [$MIN_ROMAN_VALUE..$MAX_ROMAN_VALUE]")
     }
     constructor(romanNum: String) : this(toIntFromRoman(romanNum))

@@ -1,6 +1,4 @@
-package tests
-
-
+import lessons.lesson02.RomanNum
 import lessons.lesson02.toRoman
 import org.testng.AssertJUnit.assertEquals
 import org.testng.annotations.Test
@@ -16,7 +14,7 @@ class RomanNumTest {
     @Test
     fun doubleToRomanTest(){
         for(i in 1..3999){
-            assertEquals(i.toDouble(), i.toRoman().toDouble())
+            assertEquals(i.toDouble(), RomanNum(i).toDouble())
         }
     }
     @Test
