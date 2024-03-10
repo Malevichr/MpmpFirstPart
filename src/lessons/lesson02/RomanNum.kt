@@ -1,9 +1,12 @@
 package lessons.lesson02
 
-class RomanNum(val intValue:Int) : Number(), Comparable<RomanNum> {
+import myTools.Validator
+
+class RomanNum(number: Number) : Number(), Comparable<RomanNum> {
+    val intValue:Int
     init {
-        if (!((intValue >= MIN_INT_VALUE) and (intValue <= MAX_INT_VALUE)))
-            throw IllegalArgumentException("Result out of range [$MIN_ROMAN_VALUE..$MAX_ROMAN_VALUE]")
+        RomanNumIntValidator(number).validate()
+        intValue = number.toInt()
     }
     constructor(romanNum: String) : this(toIntFromRoman(romanNum))
 
@@ -78,7 +81,7 @@ class RomanNum(val intValue:Int) : Number(), Comparable<RomanNum> {
             return result
         }
         private fun toIntFromRoman(romanNum: String): Int{
-            RomanValidator(romanNum).validate()
+            RomanStringValidator(romanNum).validate()
             var result = 0
             var index = 0
             while (index < romanNum.length) {
@@ -126,10 +129,8 @@ class RomanNum(val intValue:Int) : Number(), Comparable<RomanNum> {
     }
 
     private fun resultValidate(result: Int): RomanNum {
-        return if ((result > MIN_INT_VALUE) and (result < MAX_INT_VALUE))
-            RomanNum(result)
-        else
-            throw IllegalArgumentException("Result out of range [$MIN_ROMAN_VALUE..$MAX_ROMAN_VALUE]")
+        RomanNumIntValidator(result).validate()
+        return RomanNum(result)
     }
 
     operator fun plus(value: Number): RomanNum {
@@ -183,6 +184,26 @@ class RomanNum(val intValue:Int) : Number(), Comparable<RomanNum> {
     override fun toString(): String {
         return toRomanString(intValue)
     }
+    class RomanStringValidator(private val romanNumber: String) : Validator {
+        companion object {
+            val regexValidator = Regex("""M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})${'$'}""")
+        }
+
+        override fun validate(): Boolean {
+            if (!regexValidator.matches(romanNumber))
+                throw IllegalArgumentException("Not roman number")
+            else
+                return true
+        }
+    }
+    class RomanNumIntValidator(private val intValue: Number) : Validator{
+        override fun validate(): Boolean {
+            return if ((intValue.toInt() >= MIN_INT_VALUE) and (intValue.toInt() <= MAX_INT_VALUE))
+                true
+            else
+                throw IllegalArgumentException("Number out of range [$MIN_ROMAN_VALUE..$MAX_ROMAN_VALUE]")
+        }
+    }
 }
 
 fun Int.toRoman(): RomanNum {
@@ -190,21 +211,21 @@ fun Int.toRoman(): RomanNum {
 }
 
 fun Byte.toRoman(): RomanNum {
-    return this.toInt().toRoman()
+    return RomanNum(this)
 }
 
 fun Double.toRoman(): RomanNum {
-    return this.toInt().toRoman()
+    return RomanNum(this)
 }
 
 fun Float.toRoman(): RomanNum {
-    return this.toInt().toRoman()
+    return RomanNum(this)
 }
 
 fun Long.toRoman(): RomanNum {
-    return this.toInt().toRoman()
+    return RomanNum(this)
 }
 
 fun Short.toRoman(): RomanNum {
-    return this.toInt().toRoman()
+    return RomanNum(this)
 }

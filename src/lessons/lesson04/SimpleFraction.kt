@@ -1,6 +1,6 @@
 package lessons.lesson04
 
-import lessons.lesson02.Validator
+import myTools.Validator
 import kotlin.math.abs
 
 
