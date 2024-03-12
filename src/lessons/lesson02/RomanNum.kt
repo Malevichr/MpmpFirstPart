@@ -3,11 +3,10 @@ package lessons.lesson02
 import myTools.Validator
 
 class RomanNum(
-    number: Number,
-    private val romanNumConverter: RomanNumConverter = RomanNumConverter.Base()
+    number: Number
 ) : Number(), Comparable<RomanNum> {
     val intValue:Int
-
+    private val romanNumConverter: RomanNumConverter = RomanNumConverter.Base()
     init {
         RomanNumIntValidator(number).validate()
         intValue = number.toInt()

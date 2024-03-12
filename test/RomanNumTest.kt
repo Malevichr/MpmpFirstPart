@@ -1,5 +1,4 @@
 import lessons.lesson02.RomanNum
-import lessons.lesson02.toRoman
 import org.testng.AssertJUnit.assertEquals
 import org.testng.annotations.Test
 
@@ -8,7 +7,7 @@ class RomanNumTest {
     @Test
     fun intToRomanTest(){
         for(i in 1..3999){
-            assertEquals(i, i.toRoman().toInt())
+            assertEquals(i, RomanNum(i).toInt())
         }
     }
     @Test
@@ -20,19 +19,19 @@ class RomanNumTest {
     @Test
     fun romanPlusTest(){
         for (i in 1..1000){
-            assertEquals((i + 2*i).toRoman().toString(), (i.toRoman() + 2*i).toString())
+            assertEquals(RomanNum((i + 2*i)).toString(), (RomanNum(i) + 2*i).toString())
         }
     }
     @Test
     fun romanMinusTest(){
         for (i in 1..1000){
-            assertEquals((3*i - i).toRoman().toString(), ((3*i).toRoman() - i).toString())
+            assertEquals(RomanNum(3*i - i).toString(), RomanNum((3*i) - i).toString())
         }
     }
     @Test
     fun equalsTest(){
         for (i in 1..3999){
-            assertEquals(i.toRoman() == i.toRoman(), true)
+            assertEquals(RomanNum(i) == RomanNum(i), true)
         }
     }
 }
