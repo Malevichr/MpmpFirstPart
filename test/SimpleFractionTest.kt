@@ -79,28 +79,27 @@ class SimpleFractionTest {
     @Test
     fun shortenFractionTest1() {
         val simpleFraction = SimpleFraction("5/10")
-        val shortedFractionalNumber = simpleFraction.shortenFraction()
+        val shortedFractionalNumber = simpleFraction
         assertEquals("1/2", shortedFractionalNumber.toString())
     }
 
     @Test
     fun shortenFractionTest2() {
         val simpleFraction = SimpleFraction("-4/24")
-        val shortedFractionalNumber = simpleFraction.shortenFraction()
-        assertEquals("-1/6", shortedFractionalNumber.toString())
+        assertEquals("-1/6", simpleFraction.toString())
     }
 
     @Test
     fun shortenFractionTest3() {
         val simpleFraction = SimpleFraction("30/-5")
-        val shortedFractionalNumber = simpleFraction.shortenFraction()
+        val shortedFractionalNumber = simpleFraction
         assertEquals("-6/1", shortedFractionalNumber.toString())
     }
 
     @Test
     fun shortenFractionTest4() {
         val simpleFraction = SimpleFraction("-12/-3")
-        val shortedFractionalNumber = simpleFraction.shortenFraction()
+        val shortedFractionalNumber = simpleFraction
         assertEquals("4/1", shortedFractionalNumber.toString())
     }
 

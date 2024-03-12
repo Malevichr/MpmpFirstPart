@@ -2,6 +2,7 @@ package lessons.lesson04
 
 import myTools.Validator
 import kotlin.math.abs
+import kotlin.math.absoluteValue
 
 
 class SimpleFraction(fractionString: String) : Number(), Comparable<Number> {
@@ -11,24 +12,34 @@ class SimpleFraction(fractionString: String) : Number(), Comparable<Number> {
     init {
         SimpleFractionValidator(fractionString).validate()
 
-        try {
-            numerator = fractionString.substringBefore("/").toInt()
-        } catch (_: Exception) {
-            throw (IllegalArgumentException("Numerator out of range"))
-        }
+        val shortenFractionString = shortenFraction(fractionString)
 
-        try {
-            this.denominator = if (fractionString.contains("/")) fractionString.substringAfter("/").toInt() else 1
-        } catch (_: Exception) {
-            throw (IllegalArgumentException("Denominator out of range"))
-        }
-
-        if (denominator == 0) throw IllegalArgumentException("Denominator is zero")
+        numerator = takeNumerator(shortenFractionString)
+        denominator = takeDenominator(shortenFractionString)
     }
 
     constructor(number: Number) : this(toFractional(number))
 
     companion object {
+        private fun takeNumerator(fractionString: String): Int{
+            val numerator: Int
+            try {
+                numerator = fractionString.substringBefore("/").toInt()
+            } catch (_: Exception) {
+                throw (IllegalArgumentException("Numerator out of range"))
+            }
+            return numerator
+        }
+        private fun takeDenominator(fractionString: String): Int{
+            val denominator: Int
+            try {
+                denominator = if (fractionString.contains("/")) fractionString.substringAfter("/").toInt() else 1
+            } catch (_: Exception) {
+                throw (IllegalArgumentException("Denominator out of range"))
+            }
+            if (denominator == 0) throw IllegalArgumentException("Denominator is zero")
+            return denominator
+        }
         private fun toFractional(number: Number): String {
             if (number is SimpleFraction) return number.toString()
 
@@ -39,13 +50,7 @@ class SimpleFraction(fractionString: String) : Number(), Comparable<Number> {
                 numerator *= 10
                 denominator *= 10
             }
-
-
-            var gcd = getGreatestCommonDivisor(numerator.toInt(), denominator.toInt())
-
-            if ((numerator < 0) and (denominator > 0)) gcd *= -1
-
-            return (numerator.toInt() / gcd).toString() + "/" + (denominator.toInt() / gcd)
+            return shortenFraction(numerator.toInt().toString() + "/" + denominator.toInt())
         }
 
         private fun getGreatestCommonDivisor(a: Int, b: Int): Int {
@@ -57,6 +62,17 @@ class SimpleFraction(fractionString: String) : Number(), Comparable<Number> {
                 num1 = temp
             }
             return num1
+        }
+        private fun shortenFraction(fractionString: String): String {
+            val numerator = takeNumerator(fractionString)
+            val denominator = takeDenominator(fractionString)
+
+            var gcd = getGreatestCommonDivisor(numerator.toInt(), denominator.toInt()).absoluteValue
+
+            if ((denominator < 0))
+                gcd *= -1
+
+            return (numerator / gcd).toString() + "/" + (denominator / gcd)
         }
     }
 
@@ -76,11 +92,6 @@ class SimpleFraction(fractionString: String) : Number(), Comparable<Number> {
 
     override fun toString(): String = "$numerator/$denominator"
 
-    fun shortenFraction(): SimpleFraction {
-        var gcd = getGreatestCommonDivisor(numerator, denominator)
-        if ((numerator < 0) and (denominator > 0)) gcd *= -1
-        return SimpleFraction((numerator / gcd).toString() + "/" + (denominator / gcd))
-    }
 
     operator fun plus(other: Number): SimpleFraction {
         val otherSimpleFraction = SimpleFraction(other)
@@ -88,7 +99,7 @@ class SimpleFraction(fractionString: String) : Number(), Comparable<Number> {
         val denominator = this.denominator * otherSimpleFraction.denominator
         val numerator =
             this.numerator * otherSimpleFraction.denominator + otherSimpleFraction.numerator * this.denominator
-        return SimpleFraction("$numerator/$denominator").shortenFraction()
+        return SimpleFraction("$numerator/$denominator")
     }
 
 
@@ -98,7 +109,7 @@ class SimpleFraction(fractionString: String) : Number(), Comparable<Number> {
         val denominator = this.denominator * otherSimpleFraction.denominator
         val numerator =
             this.numerator * otherSimpleFraction.denominator - otherSimpleFraction.numerator * this.denominator
-        return SimpleFraction("$numerator/$denominator").shortenFraction()
+        return SimpleFraction("$numerator/$denominator")
     }
 
     operator fun div(other: Number): SimpleFraction {
@@ -106,7 +117,7 @@ class SimpleFraction(fractionString: String) : Number(), Comparable<Number> {
 
         val numerator = this.numerator * otherSimpleFraction.denominator
         val denominator = this.denominator * otherSimpleFraction.numerator
-        return SimpleFraction("$numerator/$denominator").shortenFraction()
+        return SimpleFraction("$numerator/$denominator")
     }
 
     operator fun times(other: Number): SimpleFraction {
@@ -114,12 +125,12 @@ class SimpleFraction(fractionString: String) : Number(), Comparable<Number> {
 
         val numerator = this.numerator * otherSimpleFraction.numerator
         val denominator = this.denominator * otherSimpleFraction.denominator
-        return SimpleFraction("$numerator/$denominator").shortenFraction()
+        return SimpleFraction("$numerator/$denominator")
     }
 
     operator fun unaryPlus(): SimpleFraction = SimpleFraction(this)
 
-    operator fun unaryMinus(): SimpleFraction = (SimpleFraction(this) * SimpleFraction("-1")).shortenFraction()
+    operator fun unaryMinus(): SimpleFraction = (SimpleFraction(this) * SimpleFraction("-1"))
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
