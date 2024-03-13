@@ -1,34 +1,38 @@
 package lessons.lesson04
 
 import myTools.Validator
-import kotlin.math.abs
-import kotlin.math.absoluteValue
 
 
 class SimpleFraction(
-    fractionString: String
+    fractionString: String,
+    fractionConverter: FractionConverter = FractionConverter.Simple(),
+    fractionParser: FractionParser = FractionParser.Simple()
 ) : Number(), Comparable<Number> {
     private val numerator: Int
     private val denominator: Int
-    private val fractionParser: SimpleFractionParser = SimpleFractionParser.Base()
-    private val fractionConverter: SimpleFractionConverter = SimpleFractionConverter.Base()
+    private val fractionParser: FractionParser
+    private val fractionConverter: FractionConverter
+
     init {
         SimpleFractionValidator(fractionString).validate()
+        this.fractionParser = fractionParser
+        this.fractionConverter = fractionConverter
 
+        val shortenFractionString = this.fractionConverter.shortenFraction(fractionString)
 
-        val shortenFractionString = fractionConverter.shortenFraction(fractionString)
-
-        numerator = fractionParser.takeNumerator(shortenFractionString)
-        denominator = fractionParser.takeDenominator(shortenFractionString)
+        numerator = this.fractionParser.takeNumerator(shortenFractionString)
+        denominator = this.fractionParser.takeDenominator(shortenFractionString)
     }
 
-    constructor(number: Number, fractionConverter: SimpleFractionConverter = SimpleFractionConverter.Base()) :
-            this(fractionConverter.toFractional(number))
-
-    companion object {
-
-
-    }
+    constructor(
+        number: Number,
+        fractionConverter: FractionConverter = FractionConverter.Simple(),
+        fractionParser: FractionParser = FractionParser.Simple()
+    ) : this(
+        fractionConverter.toFractional(number),
+        fractionConverter,
+        fractionParser
+    )
 
     override fun compareTo(other: Number): Int = this.toDouble().compareTo(other.toDouble())
 
@@ -112,69 +116,6 @@ class SimpleFraction(
         }
     }
 }
-interface SimpleFractionParser{
-    fun takeNumerator(fractionString: String): Int
-    fun takeDenominator(fractionString: String): Int
-    class Base: SimpleFractionParser{
-        override fun takeNumerator(fractionString: String): Int{
-            val numerator: Int
-            try {
-                numerator = fractionString.substringBefore("/").toInt()
-            } catch (_: Exception) {
-                throw (IllegalArgumentException("Numerator out of range"))
-            }
-            return numerator
-        }
-        override fun takeDenominator(fractionString: String): Int{
-            val denominator: Int
-            try {
-                denominator = if (fractionString.contains("/")) fractionString.substringAfter("/").toInt() else 1
-            } catch (_: Exception) {
-                throw (IllegalArgumentException("Denominator out of range"))
-            }
-            if (denominator == 0) throw IllegalArgumentException("Denominator is zero")
-            return denominator
-        }
-    }
-}
-interface SimpleFractionConverter{
-    fun toFractional(number: Number): String
-    fun shortenFraction(fractionString: String): String
-    class Base(private val fractionParser: SimpleFractionParser.Base = SimpleFractionParser.Base()) : SimpleFractionConverter{
-        override fun toFractional(number: Number): String {
-            if (number is SimpleFraction) return number.toString()
-
-            var numerator = number.toDouble()
-            var denominator = 1.0
-
-            while ((numerator % 1 != 0.0) and (abs(numerator) * 10 < Int.MAX_VALUE) and (abs(denominator) * 10 < Int.MAX_VALUE)) {
-                numerator *= 10
-                denominator *= 10
-            }
-            return shortenFraction(numerator.toInt().toString() + "/" + denominator.toInt())
-        }
 
 
-        override fun shortenFraction(fractionString: String): String {
-            val numerator = fractionParser.takeNumerator(fractionString)
-            val denominator = fractionParser.takeDenominator(fractionString)
 
-            var gcd = getGreatestCommonDivisor(numerator.toInt(), denominator.toInt()).absoluteValue
-
-            if ((denominator < 0))
-                gcd *= -1
-
-            return (numerator / gcd).toString() + "/" + (denominator / gcd)
-        }
-        private fun getGreatestCommonDivisor(a: Int, b: Int): Int {
-            var num1 = a
-            var num2 = b
-            while (num2 != 0) {
-                val temp = num2
-                num2 = num1 % num2
-                num1 = temp
-            }
-            return num1
-        }
-    }
-}

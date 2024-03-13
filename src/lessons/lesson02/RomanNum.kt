@@ -3,16 +3,22 @@ package lessons.lesson02
 import myTools.Validator
 
 class RomanNum(
-    number: Number
-) : Number(), Comparable<RomanNum> {
-    val intValue:Int
-    private val romanNumConverter: RomanNumConverter = RomanNumConverter.Base()
+    number: Number,
+    romanNumConverter: RomanNumConverter = RomanNumConverter.Base(),
+) : Number(), Comparable<Number> {
+    val intValue: Int
+    private val romanNumConverter: RomanNumConverter
+
     init {
         RomanNumIntValidator(number).validate()
         intValue = number.toInt()
+        this.romanNumConverter = romanNumConverter
     }
-    constructor(romanNum: String, romanNumConverter: RomanNumConverter = RomanNumConverter.Base()) :
-            this(romanNumConverter.toIntFromRoman(romanNum))
+
+    constructor(
+        romanNum: String,
+        romanNumConverter: RomanNumConverter = RomanNumConverter.Base(),
+    ) : this(romanNumConverter.toIntFromRoman(romanNum))
 
     companion object {
         const val MIN_INT_VALUE: Int = 1
@@ -46,8 +52,8 @@ class RomanNum(
         return intValue.toShort()
     }
 
-    override fun compareTo(other: RomanNum): Int {
-        return intValue.compareTo(other.toInt())
+    override fun compareTo(other: Number): Int {
+        return intValue.compareTo(other.toDouble())
     }
 
     private fun resultValidate(result: Int): RomanNum {
@@ -106,6 +112,7 @@ class RomanNum(
     override fun toString(): String {
         return romanNumConverter.toRomanString(intValue)
     }
+
     class RomanStringValidator(private val romanNumber: String) : Validator {
         companion object {
             val regexValidator = Regex("""M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})${'$'}""")
@@ -118,7 +125,8 @@ class RomanNum(
                 return true
         }
     }
-    class RomanNumIntValidator(private val intValue: Number) : Validator{
+
+    class RomanNumIntValidator(private val intValue: Number) : Validator {
         override fun validate(): Boolean {
             return if ((intValue.toInt() >= MIN_INT_VALUE) and (intValue.toInt() <= MAX_INT_VALUE))
                 true
