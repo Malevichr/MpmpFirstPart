@@ -26,7 +26,7 @@ interface FractionConverter {
             val numerator = fractionParser.takeNumerator(fractionString)
             val denominator = fractionParser.takeDenominator(fractionString)
 
-            var gcd = getGreatestCommonDivisor(numerator, denominator).absoluteValue
+            var gcd = getGreatestCommonDivisor(numerator, denominator)
 
             if ((denominator < 0))
                 gcd *= -1
@@ -42,7 +42,7 @@ interface FractionConverter {
                 num2 = num1 % num2
                 num1 = temp
             }
-            return num1
+            return num1.absoluteValue
         }
     }
 }

@@ -10,7 +10,7 @@ class RomanNum(
     private val romanNumConverter: RomanNumConverter
 
     init {
-        RomanNumIntValidator(number).validate()
+        RomanIntValidator(number).validate()
         intValue = number.toInt()
         this.romanNumConverter = romanNumConverter
     }
@@ -57,7 +57,7 @@ class RomanNum(
     }
 
     private fun resultValidate(result: Int): RomanNum {
-        RomanNumIntValidator(result).validate()
+        RomanIntValidator(result).validate()
         return RomanNum(result)
     }
 
@@ -126,7 +126,7 @@ class RomanNum(
         }
     }
 
-    class RomanNumIntValidator(private val intValue: Number) : Validator {
+    class RomanIntValidator(private val intValue: Number) : Validator {
         override fun validate(): Boolean {
             return if ((intValue.toInt() >= MIN_INT_VALUE) and (intValue.toInt() <= MAX_INT_VALUE))
                 true

@@ -53,6 +53,7 @@ class SimpleFractionTest {
             SimpleFraction("-0/0")
         }
     }
+    @Test
     fun initTest(){
         val simpleFraction1 = SimpleFraction("4/5")
         val newSimpleFraction = SimpleFraction(simpleFraction1)
@@ -122,25 +123,30 @@ class SimpleFractionTest {
         val simpleFractionSecond = SimpleFraction("1/3")
         assertEquals("-1/6", (simpleFractionFirst + simpleFractionSecond).toString())
     }
+    @Test
     fun minusTest(){
         val simpleFractionFirst = SimpleFraction("1/2")
         val simpleFractionSecond = SimpleFraction("1/6")
         assertEquals("1/3", (simpleFractionFirst - simpleFractionSecond).toString())
     }
+    @Test
     fun divTest(){
         val simpleFractionFirst = SimpleFraction("1/2")
         val simpleFractionSecond = SimpleFraction("1/6")
         assertEquals("3/1", (simpleFractionFirst / simpleFractionSecond).toString())
     }
+    @Test
     fun timesTest(){
         val simpleFractionFirst = SimpleFraction("4/2")
         val simpleFractionSecond = SimpleFraction("1/6")
         assertEquals("1/3", (simpleFractionFirst * simpleFractionSecond).toString())
     }
+    @Test
     fun unaryMinusTest() {
         val simpleFraction = SimpleFraction("4/2")
         assertEquals("-2/1", (-simpleFraction).toString())
     }
+    @Test
     fun equalsTest1(){
         val simpleFractionFirst = SimpleFraction("4/2")
         val simpleFractionSecond = SimpleFraction("8/4")

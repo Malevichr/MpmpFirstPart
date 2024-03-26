@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Fourth lesson. FractionalNumber. Bug fix and operators refactored">
+    <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Refactored constructors of SimpleFraction and RomanNum. Interfaces moved to files">
+      <change afterPath="$PROJECT_DIR$/src/lessons/lesson5/ScopeValidator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/lessons/lesson5/FourScopeValidatorTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/lesson04/FractionalNumber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson04/FractionalNumber.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/FractionalNumberTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/FractionalNumberTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lessons/lesson04/FractionConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson04/FractionConverter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SimpleFractionTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/test/SimpleFractionTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +21,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Kotlin File" />
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -59,6 +63,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in MPMP.executor": "Run",
+    "JUnit.tests in MPMP.executor": "Run",
     "Kotlin.Main.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -66,6 +72,10 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.FourScopeValidatorTest.first.executor": "Run",
+    "TestNG.FourScopeValidatorTest.test1.executor": "Run",
+    "TestNG.FractionTest.executor": "Run",
+    "TestNG.FractionTest.toStringTest.executor": "Run",
     "TestNG.FractionalNumberTest.divTest.executor": "Run",
     "TestNG.FractionalNumberTest.doubleInitTest.executor": "Run",
     "TestNG.FractionalNumberTest.doubleInitTest1.executor": "Run",
@@ -98,107 +108,125 @@
     "TestNG.FractionalNumberTest.toStringTest2.executor": "Run",
     "TestNG.FractionalNumberTest.toStringTest3.executor": "Run",
     "TestNG.FractionalNumberTest.unaryMinusTest.executor": "Run",
+    "TestNG.RomanNumTest (1).executor": "Run",
+    "TestNG.RomanNumTest.doubleToRomanTest.executor": "Run",
     "TestNG.RomanNumTest.executor": "Run",
+    "TestNG.RomanNumTest.intToRomanTest.executor": "Run",
     "TestNG.RomanTest.equalsTest.executor": "Run",
     "TestNG.RomanTest.executor": "Run",
     "TestNG.RomanTest.intToRomanTest.executor": "Run",
     "TestNG.RomanTest.romanMinusTest.executor": "Run",
     "TestNG.RomanTest.romanPlusTest.executor": "Run",
+    "TestNG.SimpleFractionTest.executor": "Run",
+    "TestNG.SimpleFractionTest.intInitTest.executor": "Run",
+    "TestNG.SimpleFractionTest.shortenFractionTest2.executor": "Run",
+    "TestNG.SimpleFractionTest.toStringTest3.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "settings.qodana"
+    "last_opened_file_path": "D:/MyProgs/MyRepositories/kotlinTddLearning/MPMP/src/myTools",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "coverage"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyProgs\MyRepositories\kotlinTddLearning\MPMP\src\myTools" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="tests" />
       <recent name="lessons.Lesson2" />
       <recent name="lessons.Lesson1" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="lessons.lesson5" />
+      <recent name="lessons.lesson04" />
+      <recent name="tests" />
+    </key>
   </component>
-  <component name="RunManager" selected="TestNG.FractionalNumberTest.initWithExceptionTest6">
-    <configuration name="FractionalNumberTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.FourScopeValidatorTest.test3">
+    <configuration name="FourScopeValidatorTest.first" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MPMP" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="lessons.lesson5.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
+      <option name="PACKAGE_NAME" value="lessons.lesson5" />
+      <option name="MAIN_CLASS_NAME" value="lessons.lesson5.FourScopeValidatorTest" />
+      <option name="METHOD_NAME" value="first" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FourScopeValidatorTest.test1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lessons.lesson5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lessons.lesson5" />
+      <option name="MAIN_CLASS_NAME" value="lessons.lesson5.FourScopeValidatorTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FourScopeValidatorTest.test2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lessons.lesson5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lessons.lesson5" />
+      <option name="MAIN_CLASS_NAME" value="lessons.lesson5.FourScopeValidatorTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FourScopeValidatorTest.test3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lessons.lesson5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lessons.lesson5" />
+      <option name="MAIN_CLASS_NAME" value="lessons.lesson5.FourScopeValidatorTest" />
+      <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleFractionTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SimpleFractionTest" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FractionalNumberTest.doubleInitTest1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MPMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
-      <option name="METHOD_NAME" value="doubleInitTest1" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FractionalNumberTest.doubleInitTest2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MPMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
-      <option name="METHOD_NAME" value="doubleInitTest2" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FractionalNumberTest.initWithExceptionTest6" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MPMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
-      <option name="METHOD_NAME" value="initWithExceptionTest6" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FractionalNumberTest.intInitTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MPMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FractionalNumberTest" />
-      <option name="METHOD_NAME" value="intInitTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -207,11 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.FractionalNumberTest.initWithExceptionTest6" />
-        <item itemvalue="TestNG.FractionalNumberTest" />
-        <item itemvalue="TestNG.FractionalNumberTest.doubleInitTest1" />
-        <item itemvalue="TestNG.FractionalNumberTest.intInitTest" />
-        <item itemvalue="TestNG.FractionalNumberTest.doubleInitTest2" />
+        <item itemvalue="TestNG.FourScopeValidatorTest.test3" />
+        <item itemvalue="TestNG.FourScopeValidatorTest.test1" />
+        <item itemvalue="TestNG.FourScopeValidatorTest.test2" />
+        <item itemvalue="TestNG.FourScopeValidatorTest.first" />
+        <item itemvalue="TestNG.SimpleFractionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -383,7 +411,79 @@
       <option name="project" value="LOCAL" />
       <updated>1709833908402</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fourth lesson. FractionalNumber. Added out of range exceptions">
+      <option name="closed" value="true" />
+      <created>1709834877610</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1709834877610</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Fourth lesson. FractionalNumber. toFractional refactored(deleted exceptions)">
+      <option name="closed" value="true" />
+      <created>1709839603514</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1709839603514</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fourth lesson. FractionalNumber. Code polished">
+      <option name="closed" value="true" />
+      <created>1709987212034</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1709987212034</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Test moved to another directory. FractionalNumber renamed to SimpleFraction. Created new class Fraction. RomanNum bug fix.">
+      <option name="closed" value="true" />
+      <created>1710078311745</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1710078311745</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Validator refactor">
+      <option name="closed" value="true" />
+      <created>1710079513386</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1710079513386</updated>
+    </task>
+    <task id="LOCAL-00025" summary="SimpleFraction refactored with the teacher's instructions">
+      <option name="closed" value="true" />
+      <created>1710239258241</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1710239258241</updated>
+    </task>
+    <task id="LOCAL-00026" summary="RomanNum. RomanNum refactored: deleted private functions, created interface RomanNumConverter and added to RomanNum constructor">
+      <option name="closed" value="true" />
+      <created>1710274684655</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1710274684655</updated>
+    </task>
+    <task id="LOCAL-00027" summary="SimpleFraction. SimpleFraction refactored: deleted private functions, created interfaces SimpleFractionConverter and SimpleFractionParser">
+      <option name="closed" value="true" />
+      <created>1710276766369</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1710276766369</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Refactored constructors of SimpleFraction and RomanNum. Interfaces moved to files">
+      <option name="closed" value="true" />
+      <created>1710338883767</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1710338883767</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -398,9 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
-    <MESSAGE value="FirstTask solved" />
-    <MESSAGE value="FirstTask delete Interface" />
     <MESSAGE value="FirstTask created interface Converter" />
     <MESSAGE value="FirstTask polished" />
     <MESSAGE value="FirstTask bug fixed" />
@@ -417,6 +514,15 @@
     <MESSAGE value="Fourth lesson. FractionalNumber. The basic functionality is completed" />
     <MESSAGE value="Fourth lesson. FractionalNumber. Added initialization by Number" />
     <MESSAGE value="Fourth lesson. FractionalNumber. Bug fix and operators refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourth lesson. FractionalNumber. Bug fix and operators refactored" />
+    <MESSAGE value="Fourth lesson. FractionalNumber. Added out of range exceptions" />
+    <MESSAGE value="Fourth lesson. FractionalNumber. toFractional refactored(deleted exceptions)" />
+    <MESSAGE value="Fourth lesson. FractionalNumber. Code polished" />
+    <MESSAGE value="Test moved to another directory. FractionalNumber renamed to SimpleFraction. Created new class Fraction. RomanNum bug fix." />
+    <MESSAGE value="Validator refactor" />
+    <MESSAGE value="SimpleFraction refactored with the teacher's instructions" />
+    <MESSAGE value="RomanNum. RomanNum refactored: deleted private functions, created interface RomanNumConverter and added to RomanNum constructor" />
+    <MESSAGE value="SimpleFraction. SimpleFraction refactored: deleted private functions, created interfaces SimpleFractionConverter and SimpleFractionParser" />
+    <MESSAGE value="Refactored constructors of SimpleFraction and RomanNum. Interfaces moved to files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored constructors of SimpleFraction and RomanNum. Interfaces moved to files" />
   </component>
 </project>
