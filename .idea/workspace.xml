@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6552e571-425a-4142-a411-660399df1548" name="Changes" comment="Refactored constructors of SimpleFraction and RomanNum. Interfaces moved to files">
-      <change afterPath="$PROJECT_DIR$/src/lessons/lesson5/ScopeValidator.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/lessons/lesson5/FourScopeValidatorTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helloworld/data/HelloRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helloworld/data/LoadResult.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helloworld/presentation/HelloViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helloworld/presentation/UiState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helloworld/presentation/View.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/HelloViewModelTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson02/RomanNum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lessons/lesson04/FractionConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lessons/lesson04/FractionConverter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SimpleFractionTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/test/SimpleFractionTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +26,8 @@
         <option value="Kotlin File" />
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -64,6 +66,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.All in MPMP.executor": "Run",
+    "JUnit.HelloViewModelTest.executor": "Run",
     "JUnit.tests in MPMP.executor": "Run",
     "Kotlin.Main.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
@@ -137,11 +140,21 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyProgs\MyRepositories\kotlinTddLearning\MpmpFirstPart\src" />
+      <recent name="D:\MyProgs\MyRepositories\kotlinTddLearning\MpmpFirstPart\src\helloworld\presentation" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="helloworld.data" />
+      <recent name="" />
+      <recent name="HelloWorld" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="helloworld.data" />
+      <recent name="helloworld.presentation" />
       <recent name="" />
       <recent name="tests" />
       <recent name="lessons.Lesson2" />
-      <recent name="lessons.Lesson1" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="lessons.lesson5" />
@@ -149,57 +162,19 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.FourScopeValidatorTest.test3">
-    <configuration name="FourScopeValidatorTest.first" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Kotlin.MainKt">
+    <configuration name="HelloViewModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MPMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lessons.lesson5.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lessons.lesson5" />
-      <option name="MAIN_CLASS_NAME" value="lessons.lesson5.FourScopeValidatorTest" />
-      <option name="METHOD_NAME" value="first" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HelloViewModelTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FourScopeValidatorTest.test1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="MPMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lessons.lesson5.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lessons.lesson5" />
-      <option name="MAIN_CLASS_NAME" value="lessons.lesson5.FourScopeValidatorTest" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FourScopeValidatorTest.test2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="MPMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lessons.lesson5.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lessons.lesson5" />
-      <option name="MAIN_CLASS_NAME" value="lessons.lesson5.FourScopeValidatorTest" />
-      <option name="METHOD_NAME" value="test2" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -222,6 +197,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RomanNumTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MPMP" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RomanNumTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SimpleFractionTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="MPMP" />
       <option name="PACKAGE_NAME" value="" />
@@ -235,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.FourScopeValidatorTest.test3" />
-        <item itemvalue="TestNG.FourScopeValidatorTest.test1" />
-        <item itemvalue="TestNG.FourScopeValidatorTest.test2" />
-        <item itemvalue="TestNG.FourScopeValidatorTest.first" />
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="JUnit.HelloViewModelTest" />
         <item itemvalue="TestNG.SimpleFractionTest" />
+        <item itemvalue="TestNG.RomanNumTest" />
+        <item itemvalue="TestNG.FourScopeValidatorTest.test3" />
       </list>
     </recent_temporary>
   </component>
